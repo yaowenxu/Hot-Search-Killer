@@ -1,0 +1,48 @@
+{
+  "name": "Hot Search Killer",
+  "version": "1.0",
+  "icons":
+	{
+		"16": "img/icon_16.png",
+		"48": "img/icon_48.png",
+		"128": "img/icon_128.png"
+	},
+  "browser_action": {
+    "default_popup": "killer.html",
+    "default_title": "百度搜索热点过滤器",
+    "default_icon": "img/icon_16.png"
+  },
+  "manifest_version": 2,
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "打开插件主页"
+    }
+  },
+  "content_scripts": 
+	[
+		{
+			"matches": ["http://baidu.com/*", "https://baidu.com/*", "http://www.baidu.com/*", "https://www.baidu.com/*"],
+			"js": ["js/jquery-3.3.1.min.js", "js/killer.js"],
+			"run_at": "document_start"
+		}
+  ],
+  "permissions":
+	[
+		"storage"
+  ],
+  "web_accessible_resources": ["js/inject.js"],
+  "homepage_url": "https://github.com/yaowenxu",
+  "description" : "__MSG_pluginDesc__",
+  "default_locale": "zh_CN",
+  "omnibox": { "keyword" : "search killer" },
+  "options_ui":
+    {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "options_page": "options.html"
+}

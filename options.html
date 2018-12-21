@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style>
+	body{font-size: 16px;width: 400px; height: 300px;padding: 10px;font-family: 'Microsoft Yahei'; }
+	#status {color:red;}
+	</style>
+	<title>搜索热点过滤器-配置页</title>
+</head>
+<body>
+	<h1>过滤器配置页</h1>
+	<p>（简单配置，是否开启过滤功能）</p>
+	<div>
+		<label>是否开启？</label>
+		<select id="choice">
+			<option value="yes">开启</option>
+			<option value="no">关闭</option>
+        </select>
+        <a href="javascript:;" id="save">保存配置</a>
+	</div>
+	<!-- <div>
+		<label><input type="checkbox" id="show_image"/>允许网页显示图片</label>
+	</div> -->
+	<div id="status"></div>
+
+	<script src="js/options.js"></script>
+</body>
+</html>
